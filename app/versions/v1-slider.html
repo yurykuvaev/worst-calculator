@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>v1 — Slider Calculator</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="shell">
+    <a class="back" href="../index.html">← back to index</a>
+    <div class="brand">
+      <h1>Slider Calculator</h1>
+      <span class="tag">Version 1</span>
+    </div>
+    <p class="subtitle">
+      Each operand is chosen with a slider from 0 to 1000. The slider is 360 pixels wide.
+      That's 0.36 px per integer. Try not to sneeze.
+    </p>
+
+    <div class="calc">
+      <div class="display">
+        <span class="small" id="expr">A op B = ?</span>
+        <span id="result">—</span>
+      </div>
+
+      <div class="slider-row">
+        <label><span>Operand A</span><span>value: <span class="val" id="aVal">500</span></span></label>
+        <input type="range" id="a" min="0" max="1000" value="500" />
+      </div>
+
+      <div class="slider-row">
+        <label><span>Operand B</span><span>value: <span class="val" id="bVal">500</span></span></label>
+        <input type="range" id="b" min="0" max="1000" value="500" />
+      </div>
+
+      <div class="row">
+        <button class="btn op" data-op="+">+</button>
+        <button class="btn op" data-op="-">−</button>
+        <button class="btn op" data-op="*">×</button>
+        <button class="btn op" data-op="/">÷</button>
+      </div>
+      <div class="row">
+        <button class="btn eq" id="eq">= compute</button>
+      </div>
+
+      <div class="hint">
+        Tip: there is no keyboard input. There is no number entry. Only the slider.
+        The slider is your god now.
+      </div>
+    </div>
+  </div>
+
+  <script src="v1-slider.js"></script>
+</body>
+</html>

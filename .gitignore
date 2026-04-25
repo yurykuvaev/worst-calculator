@@ -1,0 +1,17 @@
+# Terraform
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/*.tfvars
+infra/*.tfvars.json
+infra/.terraform.tfstate.lock.info
+
+# Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# OS
+Thumbs.db

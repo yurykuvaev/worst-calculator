@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>v3 — Roman Numeral Calculator</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="shell">
+    <a class="back" href="../index.html">← back to index</a>
+    <div class="brand">
+      <h1>Roman Numeral Calculator</h1>
+      <span class="tag">Version 3</span>
+    </div>
+    <p class="subtitle">
+      Input only in Roman numerals (I, V, X, L, C, D, M). Output also in Roman.
+      No Arabic digits anywhere. Caesar approves.
+    </p>
+
+    <div class="calc">
+      <div class="display">
+        <span class="small" id="expr">&nbsp;</span>
+        <span id="result">N</span>
+      </div>
+
+      <div class="row">
+        <button class="btn" data-c="I">I</button>
+        <button class="btn" data-c="V">V</button>
+        <button class="btn" data-c="X">X</button>
+        <button class="btn" data-c="L">L</button>
+        <button class="btn" data-c="C">C</button>
+        <button class="btn" data-c="D">D</button>
+        <button class="btn" data-c="M">M</button>
+      </div>
+      <div class="row">
+        <button class="btn op" data-op="+">+</button>
+        <button class="btn op" data-op="-">−</button>
+        <button class="btn op" data-op="*">×</button>
+        <button class="btn op" data-op="/">÷</button>
+        <button class="btn clear" id="clr">C</button>
+        <button class="btn eq" id="eq">=</button>
+      </div>
+
+      <div class="hint">
+        Reminder: N means "nothing" (zero). Roman numerals don't have zero,
+        so we made one up. Subtraction below zero shows "MINVS" plus a Roman number.
+        Division rounds down because the Romans didn't ship floats.
+      </div>
+    </div>
+  </div>
+
+  <script src="v3-roman.js"></script>
+</body>
+</html>
