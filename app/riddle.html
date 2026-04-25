@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>v4 — Math Riddle Calculator</title>
-  <link rel="stylesheet" href="../style.css" />
+  <title>Worst Calculator — Math Riddle</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="shell">
-    <a class="back" href="../index.html">← back to index</a>
-    <div class="brand">
-      <h1>Math Riddle Calculator</h1>
-      <span class="tag">Version 4</span>
+  <header class="topbar">
+    <div class="brand-mini">
+      <span class="label">worst-calculator</span>
+      <span class="name">Math Riddle</span>
     </div>
+    <nav class="versions-nav">
+      <a class="vbtn" href="slider.html" title="Slider">1</a>
+      <a class="vbtn" href="index.html" title="Drunk Buttons">2</a>
+      <a class="vbtn" href="roman.html" title="Roman Numerals">3</a>
+      <a class="vbtn active" href="riddle.html" title="Math Riddle">4</a>
+      <a class="vbtn" href="trust.html" title="Trust Issues">5</a>
+    </nav>
+  </header>
+
+  <main class="shell">
     <p class="subtitle">
       To enter a digit, you must first solve a math problem whose answer is that digit.
       Yes, this is a calculator. We made you do math to use the calculator.
@@ -51,7 +60,7 @@
         Operators are free. Digits cost a riddle. The riddles get more annoying over time.
       </div>
     </div>
-  </div>
+  </main>
 
   <div class="modal-bg" id="modal">
     <div class="modal">
@@ -66,6 +75,6 @@
     </div>
   </div>
 
-  <script src="v4-riddle.js"></script>
+  <script src="riddle.js"></script>
 </body>
 </html>

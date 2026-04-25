@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>v5 — Trust Issues Calculator</title>
-  <link rel="stylesheet" href="../style.css" />
+  <title>Worst Calculator — Trust Issues</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="shell">
-    <a class="back" href="../index.html">← back to index</a>
-    <div class="brand">
-      <h1>Trust Issues Calculator</h1>
-      <span class="tag">Version 5</span>
+  <header class="topbar">
+    <div class="brand-mini">
+      <span class="label">worst-calculator</span>
+      <span class="name">Trust Issues</span>
     </div>
+    <nav class="versions-nav">
+      <a class="vbtn" href="slider.html" title="Slider">1</a>
+      <a class="vbtn" href="index.html" title="Drunk Buttons">2</a>
+      <a class="vbtn" href="roman.html" title="Roman Numerals">3</a>
+      <a class="vbtn" href="riddle.html" title="Math Riddle">4</a>
+      <a class="vbtn active" href="trust.html" title="Trust Issues">5</a>
+    </nav>
+  </header>
+
+  <main class="shell">
     <p class="subtitle">
       Every keypress takes a random 0.4–2.0 seconds to register. Operators ask for confirmation.
       And about 1 in 10 results are slightly wrong. Have fun.
@@ -57,7 +66,7 @@
         We sometimes return the right answer plus or minus 1. We're not sorry.
       </div>
     </div>
-  </div>
+  </main>
 
   <div class="modal-bg" id="modal">
     <div class="modal">
@@ -72,6 +81,6 @@
     </div>
   </div>
 
-  <script src="v5-trust.js"></script>
+  <script src="trust.js"></script>
 </body>
 </html>

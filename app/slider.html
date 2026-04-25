@@ -3,16 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>v1 — Slider Calculator</title>
-  <link rel="stylesheet" href="../style.css" />
+  <title>Worst Calculator — Slider</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="shell">
-    <a class="back" href="../index.html">← back to index</a>
-    <div class="brand">
-      <h1>Slider Calculator</h1>
-      <span class="tag">Version 1</span>
+  <header class="topbar">
+    <div class="brand-mini">
+      <span class="label">worst-calculator</span>
+      <span class="name">Slider Calculator</span>
     </div>
+    <nav class="versions-nav">
+      <a class="vbtn active" href="slider.html" title="Slider">1</a>
+      <a class="vbtn" href="index.html" title="Drunk Buttons">2</a>
+      <a class="vbtn" href="roman.html" title="Roman Numerals">3</a>
+      <a class="vbtn" href="riddle.html" title="Math Riddle">4</a>
+      <a class="vbtn" href="trust.html" title="Trust Issues">5</a>
+    </nav>
+  </header>
+
+  <main class="shell">
     <p class="subtitle">
       Each operand is chosen with a slider from 0 to 1000. The slider is 360 pixels wide.
       That's 0.36 px per integer. Try not to sneeze.
@@ -49,8 +58,8 @@
         The slider is your god now.
       </div>
     </div>
-  </div>
+  </main>
 
-  <script src="v1-slider.js"></script>
+  <script src="slider.js"></script>
 </body>
 </html>
