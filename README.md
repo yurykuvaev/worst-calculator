@@ -1,6 +1,6 @@
 # worst-calculator
 
-The worst calculator in the world. Five fully functional calculator versions, each engineered to be as inconvenient as humanly possible. Static site, hosted on **AWS Amplify** (manual deploy mode), deployed on every push to `main` via **GitHub Actions + OIDC** — no PATs or long-lived secrets anywhere.
+The worst calculator in the world. Five fully functional calculator versions, each engineered to be as inconvenient as humanly possible. Static site, hosted on **AWS Amplify** with Git auto-deploy.
 
 ## The five versions
 
@@ -20,8 +20,7 @@ worst-calculator/
 │   ├── index.html          Hub with links to all five versions
 │   ├── style.css           Shared dark theme
 │   └── versions/           One HTML + JS per version
-├── infra/                  Terraform: Amplify app + branch + IAM OIDC role
-└── .github/workflows/      deploy.yml — zip app/, push to Amplify via OIDC
+└── amplify.yml             Build spec for AWS Amplify (publishes app/)
 ```
 
 ## Local development
@@ -36,54 +35,6 @@ python -m http.server 8000
 
 No build step. No Node. No bundler.
 
-## Deploy to AWS
+## Hosting
 
-### How it works
-
-1. Terraform creates an Amplify app in **manual deploy mode** (no Git connection) and an IAM role that GitHub Actions can assume via OIDC, scoped to deploys on this Amplify app only.
-2. On push to `main`, GitHub Actions:
-   - Assumes the IAM role via OIDC (no AWS keys, no PAT).
-   - Zips `app/`.
-   - Calls `aws amplify create-deployment` → uploads zip to the returned presigned URL → calls `aws amplify start-deployment`.
-   - Polls `aws amplify get-job` until `SUCCEED` / `FAILED`.
-3. Amplify serves the result on `https://main.<app-id>.amplifyapp.com` with a managed cert + CloudFront edge caching.
-
-### 1. Provision
-
-```powershell
-cd infra
-terraform init
-terraform apply
-```
-
-### 2. Add three GitHub secrets
-
-`Settings → Secrets and variables → Actions → New repository secret`:
-
-| Secret | Source |
-|---|---|
-| `AWS_DEPLOY_ROLE_ARN` | `terraform output -raw github_deploy_role_arn` |
-| `AWS_REGION`          | `us-east-1` |
-| `AMPLIFY_APP_ID`      | `terraform output -raw amplify_app_id` |
-
-### 3. Push
-
-```bash
-git push origin main
-```
-
-Workflow runs (~1 min). When it's green:
-
-```bash
-terraform output amplify_default_domain
-# → https://main.dXXXXXXXXXXXX.amplifyapp.com
-```
-
-## Cleanup
-
-```bash
-cd infra
-terraform destroy
-```
-
-Removes the Amplify app, all deployment history, and the IAM role.
+Hosted on **AWS Amplify**, connected to this GitHub repo. Every push to `main` triggers a fresh deployment automatically — Amplify pulls, runs `amplify.yml`, and serves `app/**/*` behind CloudFront with a managed cert.
