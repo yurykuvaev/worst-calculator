@@ -38,85 +38,32 @@ html, body {
 a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 24px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.brand-mini {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
-
-.brand-mini .label {
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.brand-mini .name {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--fg);
-  letter-spacing: -0.2px;
-}
-
-.versions-nav {
-  display: flex;
-  gap: 6px;
-}
-
-.vbtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--button-bg);
-  color: var(--muted);
-  border: none;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s, transform 0.1s, box-shadow 0.15s;
-  font-family: inherit;
-}
-
-.vbtn:hover {
-  background: var(--button-hover);
-  color: var(--fg);
-  text-decoration: none;
-}
-
-.vbtn.active {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(255, 58, 110, 0.35);
-}
-
-.vbtn.active:hover {
-  background: #ed2e60;
-  color: #fff;
-}
 
 .shell {
   max-width: 720px;
   margin: 0 auto;
   padding: 24px 20px 80px;
+}
+
+.brand {
+  margin-bottom: 24px;
+}
+
+.brand .label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.brand h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin: 0;
 }
 
 .subtitle {
