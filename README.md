@@ -4,6 +4,8 @@ The worst calculator in the world. Buttons flee the cursor and randomly
 swap positions. The `=` button is especially anxious. Static site, hosted
 on **AWS Amplify** with Git auto-deploy.
 
+**Live:** [calculator.yurykuvaev.com](https://calculator.yurykuvaev.com/). Try pressing `=`.
+
 ## Project structure
 
 ```
@@ -33,3 +35,4 @@ No build step. No Node. No bundler.
 Hosted on **AWS Amplify**, connected to this GitHub repo. Every push to
 `main` triggers a fresh deployment automatically: Amplify pulls, runs
 `amplify.yml`, and serves `app/**/*` behind CloudFront with a managed cert.
+The custom domain is wired in Amplify Console.
